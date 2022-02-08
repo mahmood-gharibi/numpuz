@@ -5,8 +5,8 @@ let timerCount = 0;
 let gameStart = false;
 let winColor = "#007e25";
 let defaultColor = "white";
+//This function is executed the first time the page is loaded.
 function init() {
-    // tile = []; /
     const table = (document.getElementById("table"));
     for (let i = 0; i < 5; i++) {
         let tr = document.createElement("tr");
@@ -23,9 +23,8 @@ function init() {
         }
         table.appendChild(tr);
     }
-    //ChangebtnStart("شروع بازی", defaultColor);
-    //newGame()
 }
+//With every click on the numbers, this function starts working.
 function click(a) {
     if (gameStart === true) {
         let i = a.srcElement.tabIndex;
@@ -43,6 +42,8 @@ function click(a) {
         }
     }
 }
+/*This module is responsible for moving numbers
+as well as checking the status of the solution.*/
 function swipe(i, j) {
     let X = tile[i].ariaValueText;
     tile[i].textContent = tile[j].textContent;
@@ -59,19 +60,24 @@ function swipe(i, j) {
         ChangeClickCounter(countClick);
     }
 }
+//Chenge Click Counter label Text.
 function ChangeClickCounter(value) {
     const ClickCount = document.getElementById("ClickCount");
     ClickCount.textContent = value.toString();
 }
+//Change Timer label Text.
 function ChangetimeCounter(value) {
     const ClickCount = document.getElementById("timeCounter");
     ClickCount.textContent = value.toString() + " ثانیه";
 }
+//change btnStart Text.
 function ChangebtnStart(value, color) {
     const btnstart = document.getElementById("btnStart");
     btnstart.textContent = value;
     btnstart.style.color = color;
 }
+/*The status of the table is checked AndIf the table is solved
+correctly 'Solvestate' is equal to correct. */
 function CheckSolve() {
     let Solvestate = false;
     for (let i = 0; i < 23; i++) {
@@ -87,6 +93,7 @@ function CheckSolve() {
     }
     return Solvestate;
 }
+//reset all settenig and make arrenges numeber randomly.
 function newGame() {
     gameStart = true;
     for (let i = 0; i < 2000; i++) {
@@ -97,9 +104,14 @@ function newGame() {
     ChangeClickCounter(countClick);
     ChangebtnStart("شروع مجدد", defaultColor);
 }
+// Timer
 setInterval(function () {
     if (gameStart === true) {
         timerCount = timerCount + 1;
         ChangetimeCounter(timerCount);
     }
 }, 1000);
+//open my Githun ;)
+function openWebSite() {
+    window.open("https://github.com/mahmood-gharibi/");
+}
