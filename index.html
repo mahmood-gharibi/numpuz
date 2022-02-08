@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>puzzle</title>
-
+    <title> Numpuz (TypeScript)</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/animation.css" />
     <script src="./dist/main.js" defer></script>
   </head>
   <body onload="init()">
+
+    <!--Left Side Animation SVG-->
     <div class="container">
       <svg
         class="ghost"
@@ -130,16 +131,18 @@
         </svg>
       </p>
     </div>
+
+    <!--Left Side Info Section-->
     <div class="container-text">
       <div class="mail"></div>
       Mahmood.Gharibi@yahoo.com
     </div>
-      <button type="button" class="btn2" id="btnWebsite" onclick="">
-       Github
+      <button type="button" class="btn2" id="btnWebsite" onclick="openWebSite()">
+       visit my Github! ;)
       </button>
     </div>
- 
-
+    
+<!-- Game Board Section-->
     <div class="gameboard">
       <table id="table"></table>
 
