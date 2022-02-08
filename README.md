@@ -1,2 +1,2 @@
-# numpuz # typescript # html # css
+# numpuz
 Number Puzzle write with TypeScript
